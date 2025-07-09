@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Fixed Navbar</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navbar Styling */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background-color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    ul.nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 4px;
+    }
+
+    ul.nav-links li a:hover {
+      color: #ffd700;
+      border-bottom: 2px solid #ffd700;
+    }
+
+    /* Content */
+    .content {
+      padding-top: 100px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav id="navbar">
+    <div class="nav-logo">MySite</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>
+      Scroll down to see the navbar change style. Hover over links for effect. This navbar stays fixed on all pages.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec tincidunt luctus, nunc turpis aliquam justo, non bibendum lorem sapien in lorem. (Repeat text below to simulate scroll.)
+    </p>
+    <p>
+      <!-- Repeat content to create scroll -->
+      <br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
+      <br>... (You can add more text or sections here)
+      <br><br><br><br><br><br><br><br><br><br>
+    </p>
+  </div>
+
+  <!-- JavaScript for scroll behavior -->
+  <script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
